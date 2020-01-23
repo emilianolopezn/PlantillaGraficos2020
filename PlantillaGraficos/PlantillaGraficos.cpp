@@ -86,6 +86,11 @@ void dibujarTriangulos() {
 
 void dibujar() {
 	dibujarPoligono();
+	dibujarLineaContinua();
+	dibujarLineas();
+	//dibujarNubes();
+	//dibujarCielo();
+	//dibujarVentana();
 }
 
 int main()
