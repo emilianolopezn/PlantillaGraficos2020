@@ -9,6 +9,8 @@
 #include "GL/glew.h"
 #include "GLFW/glfw3.h"
 
+#include <math.h>
+
 #include <iostream>
 
 using namespace std;
@@ -22,6 +24,18 @@ void dibujarPoligono() {
 	glVertex3f(0.2f, 0.3f, 0.0f);
 	glVertex3f(0.6f, -0.4f, 0.0f);
 	glVertex3f(0.4f, -0.6f, 0.0f);
+	glEnd();
+}
+
+void dibujarCirculo() {
+	glBegin(GL_POLYGON);
+	glColor3f(0.53f, 0.59f, 0.7f);
+	for (double i = 0; i < 360.0; i += 5.0) {
+		glVertex3f(
+			(0.5 * cos(i * 3.14159 / 180.0)) - 0.6, 
+			(0.1 * sin(i * 3.14159 / 180.0)) + 0.4
+			, 0.0f);
+	}
 	glEnd();
 }
 
@@ -88,6 +102,7 @@ void dibujar() {
 	dibujarPoligono();
 	dibujarLineaContinua();
 	dibujarLineas();
+	dibujarCirculo();
 	//dibujarNubes();
 	//dibujarCielo();
 	//dibujarVentana();
